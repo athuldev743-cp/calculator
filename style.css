@@ -1,20 +1,123 @@
-.calc{
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: black;
-    width: 410px;
-    height: 730px;
-    margin-left: 400px;
-    
-
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    overflow: hidden;
 }
-#screen{
-    width: 400px;
-    height: 100px;
 
 
-}.btn{
-    width: 50px;
+body::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url("https://media.giphy.com/media/3og0IPxMM0erATueVW/giphy.gif") center/cover no-repeat;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+/* Title */
+.title {
+    color: #00ff00;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    text-shadow: 0 0 10px #00ff00;
+}
+
+/* Calculator Box */
+.calc {
+    background-color: #0f0f0f;
+    border: 2px solid #00ff00;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #00ff00;
+    width: 320px;
+    padding: 20px;
+    z-index: 1;
+}
+
+/* Output Screen */
+#screen {
+    width: 100%;
     height: 80px;
-    margin-left: 40px;
-    margin-top: 30px;
-
+    font-size: 32px;
+    text-align: right;
+    margin-right: 4px;
+    background-color: black;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    border-radius: 6px;
+    box-shadow: inset 0 0 10px #00ff00;
 }
+
+
+.buttons {
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.btn {
+    flex: 1;
+    margin: 5px;
+    padding: 20px 0;
+    font-size: 20px;
+    color: #00ff00;
+    background-color: black;
+    border: 2px solid #00ff00;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background-color: #003300;
+    transform: scale(1.05);
+}
+
+
+.clr {
+    flex: 1;
+    background-color: #330000;
+    color: #ff4444;
+    border: 2px solid #ff4444;
+}
+
+.clr:hover {
+    background-color: #550000;
+}
+
+
+@media (max-width: 420px) {
+    body {
+        align-items: flex-start;
+        padding-top: 30px;
+    }
+
+    .calc {
+        width: 90vw;
+        max-width: 320px;
+    }
+
+    #screen {
+        height: 70px;
+        font-size: 24px;
+    }
+
+    .btn {
+        padding: 16px 0;
+        font-size: 18px;
+    }
+}
+
